@@ -1,0 +1,198 @@
+/*************************** Variables section. *****************************/
+// Create variables to override the default value for variables used in the Moodle and Bootstrap SCSS files.
+
+$primary: #242f40;
+$secondary: #b7bac3;
+$accent: #cca43b;
+$danger: #cd423c;
+$info: #5ed5d8;
+$light-gray: #e5e5e5;
+$button-border-radius: 2px;
+
+$shadow-level-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-level-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow-level-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$shadow-level-4: 0 14px 28px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+$shadow-level-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+/*************************** Import section  *****************************/
+@import "fontawesome";
+@import "bootstrap";
+@import "moodle";
+
+/*************************** Rules section ****************************/
+
+// Body
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $light-gray;
+  color: $primary;
+}
+
+a {
+  color: $info;
+}
+
+// Nav Drawer on the left
+#nav-drawer {
+  background-color: $primary;
+
+  .list-group-item {
+    background-color: $primary;
+    color: $light-gray;
+    border-radius: 5px;
+    margin: 4px 0px;
+    box-shadow: $shadow-level-1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &.active {
+      background-color: $accent;
+    }
+
+    &:hover {
+      box-shadow: $shadow-level-4;
+    }
+  }
+}
+
+// Top navigation bar styling
+.navbar {
+  background-color: $primary !important;
+  box-shadow: $shadow-level-1;
+  max-height: 65px;
+
+  .site-name {
+    font-size: 1.8em;
+    font-weight: bolder;
+    color: white;
+    margin-left: 10px;
+  }
+
+  .navbar-brand.has-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    background-color: $primary;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: none;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  .navlink i {
+    color: $light-gray;
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .dropdown {
+    a {
+      color: white;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: white;
+
+    .dropdown-item {
+      color: $primary;
+      i {
+        color: $primary;
+      }
+      &:hover,
+      &:focus {
+        background-color: $light-gray;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .usermenu {
+    color: white;
+    span a {
+      color: white;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+//Cards
+.card {
+  box-shadow: $shadow-level-1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: $shadow-level-3;
+  }
+}
+
+.btn {
+  border: none;
+  box-shadow: $shadow-level-1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: $shadow-level-3;
+  }
+}
+
+.btn-link {
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+
+.btn-primary {
+  color: $light-gray;
+  background-color: $primary;
+
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+.btn-secondary {
+  color: white;
+  background-color: $accent;
+
+  &:hover {
+    background-color: $accent;
+  }
+}
+
+.btn-outline-secondary {
+  background: white;
+  border: solid 1px $accent;
+  color: $accent;
+
+  &:hover {
+    background: $accent;
+    border: solid 1px $accent;
+    color: white;
+  }
+}
+
+//user profile
+.userpicture {
+  border-radius: 50%;
+}
+
+//Remove references to moodle
+.helplink {
+  display: none !important;
+}
+
+#page-footer {
+  .sitelink {
+    display: none !important;
+  }
+}
